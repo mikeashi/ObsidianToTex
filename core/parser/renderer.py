@@ -25,7 +25,6 @@ class Renderer(LaTeXRenderer):
             # TODO add lable
         
         # add text
-        # TODO render the text
         template += '\n{}\n'.format(self.element_render(self.span_tokens(token.paragraph)))
 
         # add list
@@ -38,7 +37,7 @@ class Renderer(LaTeXRenderer):
 
     def render_oink(self,token):
         # TODO : get the citention id
-        return "\cite{{{}}}".format(token.content)
+        return "\cite{{{}}}".format(token.content[1:])
 
     def render_heading(self, token):
         inner = self.render_inner(token)
